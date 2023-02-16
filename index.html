@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etch A Sketch</title>
+    <link rel="icon" href="img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/169bff8958.js" crossorigin="anonymous"></script>
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <main>
+        <header class="header">
+            <h1>Etch A Sketch</h1>
+            <button type="button" name="reset">Reset</button>
+        </header>
+
+        <section class="color-modes">
+            <button type="button" name="mode" value="random" data-tooltip="Random">
+                <span class="color-modes__btn--front">
+                    <i class="fa-solid fa-palette"></i>
+                </span>
+            </button>
+
+            <button type="button" name="mode" value="black" data-tooltip="Black">
+                <span class="color-modes__btn--front selected">
+                    <i class="fa-solid fa-pen-nib"></i>
+                </span>
+            </button>
+
+            <button type="button" name="mode" value="erase" data-tooltip="Erase">
+                <span class="color-modes__btn--front">
+                    <i class="fa-solid fa-eraser"></i>
+                </span>
+            </button>
+        </section>
+
+        <section class="canvas" tabindex="0"></section>
+
+        <section class="pixel-density">
+            <input type="range" min="12" max="48" value="12" class="pixel-density__slider" id="myRange">
+            <output class="pixel-density__output">12</output>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,305 @@
+/* Commented code = testing fluid typography */
+@import url('https://fonts.googleapis.com/css2?family=Damion&family=Nunito&display=swap');
+
+/* || VARIABLES */
+:root {
+    /* Colors */
+    --bg-body: #b9e4dc;
+    --bg-main: #c94c45;
+    --bg-track: #9b312c;
+    --bg-canvas: white;
+    --bg-btn-front: #ffd747;
+    --bg-btn: #e2b512;
+    --clr-btn: #ad7505;
+    --clr-border-main: #b34842;
+    --clr-border-pixel: #e3e3e3;
+
+    /* Font Styles */
+    --ff-body: 'Nunito', sans-serif;
+    --ff-headings: 'Damion', cursive;
+}
+
+
+/* || RESET */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+button {
+    font: inherit;
+    border: none;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+
+/* || GENERAL STYLES */
+body {
+    background-color: var(--bg-body);
+    color: var(--bg-canvas);
+    font-family: var(--ff-body);
+    font-size: 1.9rem;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+h1 {
+    color: var(--bg-btn-front);
+    font-family: var(--ff-headings);
+    font-size: 4.8rem;
+    font-weight: normal;
+    text-shadow: -.02em .02em .05em rgba(156, 49, 44, 0.5),
+                 .02em -.02em 0 rgba(255, 255, 85, 0.9);
+    /* font-size: clamp(3rem, 3.8vw, 8rem); */
+}
+
+main {
+    aspect-ratio: 1 / 1;
+    background-color: var(--bg-main);
+    border-radius: 3%;
+    border: 0.5em solid var(--clr-border-main);
+    max-width: 61rem;
+    width: 90%;
+
+    display: grid;
+    grid-template-columns: 1fr 5fr 1fr;
+    grid-auto-rows: 1fr 5fr 1fr;
+    /* width: 90%; */
+    /* max-width: 90vh; */
+}
+
+
+/* || HEADER */
+.header {
+    grid-column: span 3;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+button[name="reset"] {
+    background-color: transparent;
+    border-radius: 0.2em;
+    color: var(--bg-btn-front);
+    font-family: var(--ff-headings);
+    font-size: 2rem;
+    padding: 0.2em 0.6em 0.2em 0.4em;
+    position: absolute;
+    right: 1rem;
+    text-decoration: underline;
+}
+
+button[name="reset"]:where(:hover, :focus-visible) {
+    filter: brightness(1.2);
+    text-decoration-style: dashed;
+}
+
+
+/* || COLOR MODES */
+.color-modes {
+    grid-column: 1 / 2;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+button[name="mode"] {
+    background-color: var(--bg-btn);
+    border-radius: 0.55em;
+    color: var(--clr-btn);
+}
+
+.color-modes__btn--front {
+    background-color: var(--bg-btn-front);
+    border-radius: 0.55em;
+    display: block;
+    padding: 0.65em 0.8em;
+    transform: translateY(-0.4rem);
+    position: relative;
+}
+
+button[name="mode"]:where(:hover, :focus-visible) {
+    filter: brightness(1.15);
+}
+
+button[name="mode"]::before {
+    background-color: var(--bg-canvas);
+    border-radius: 0.2em;
+    content: attr(data-tooltip);
+    display: none;
+    font-weight: bold;
+    margin-right: 1rem;
+    padding: 0.3em 0.5em;
+    position: absolute;
+    right: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+button[name="mode"]:where(:hover, :focus)::before {
+    display: block;
+}
+
+.selected {
+    filter: brightness(1.15);
+    transform: translateY(-0.1rem);
+}
+
+
+/* || CANVAS */
+.canvas {
+    background-color: var(--bg-canvas);
+    border-radius: 2.5%;
+    grid-column: 2 / 3;
+    overflow: clip;
+
+    display: grid;
+}
+
+.canvas__pixel {
+    border: .01rem solid var(--clr-border-pixel);
+    user-select: none;
+}
+
+
+/* || SLIDER */
+.pixel-density {
+    grid-column: span 3;
+
+    display: grid;
+    grid-template-columns: inherit;
+    place-content: center;
+}
+
+.pixel-density__slider {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    grid-column: 2 / 3;
+}
+
+.pixel-density__slider::-webkit-slider-runnable-track {
+    background-color: var(--bg-track);
+    border-radius: 0.5rem;
+    height: 0.5rem;
+}
+/* Firefox */
+.pixel-density__slider::-moz-range-track {
+    background-color: var(--bg-track);
+    border-radius: 0.5rem;
+    height: 0.5rem;
+}
+
+.pixel-density__slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: var(--bg-canvas);
+    border-radius: 50%;
+    border: 0.3rem solid var(--clr-border-pixel);
+    cursor: pointer;
+    height: 4rem;
+    margin-top: calc(0.25rem - 2rem);
+    position: relative;
+    width: 4rem;
+}
+/* Firefox */
+.pixel-density__slider::-moz-range-thumb {
+    background-color: var(--bg-canvas);
+    border-radius: 50%;
+    border: 0.3rem solid var(--clr-border-pixel);
+    cursor: pointer;
+    height: 4rem;
+    margin-top: calc(0.25rem - 2rem);
+    position: relative;
+    width: 4rem;
+}
+
+.pixel-density__output {
+    font-weight: bold;
+    margin-left: 1rem;
+}
+
+
+/* || MOBILE LANDSCAPE */
+@media screen and (max-height: 610px) {
+    body {
+        font-size: 3vh;
+    }
+
+    h1 {
+        font-size: 8vh;
+    }
+
+    main {
+        width: 90vh;
+    }
+}
+
+/* || MOBILE PORTRAIT */
+@media screen and (max-width: 610px) {
+    body {
+        font-size: 1.2rem;
+    }
+    
+    h1 {
+        font-size: 3rem;
+    }
+}
+
+/* || LARGE SCREENS */
+@media screen and (min-width: 610px) and (min-height: 610px) {
+    button[name="reset"] {
+        font-size: 2.4rem;
+        right: 8rem;
+    }
+
+    .pixel-density__slider::-webkit-slider-runnable-track {
+        height: 1rem;
+    }
+
+    .pixel-density__slider::-webkit-slider-thumb {
+        border-width: 0.5rem;
+        height: 7rem;
+        margin-top: calc(0.5rem - 3.5rem);
+        width: 7rem;
+    }
+}
+
+
+/* @media screen and (min-width: 600px) and (max-width: 1000px) and (orientation: portrait) {
+    h1 {
+        font-size: 5rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    body {
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    body {
+        font-size: 2.5rem;
+    }
+} */
