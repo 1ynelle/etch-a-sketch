@@ -1,8 +1,13 @@
-# Etch A Sketch
-Submission for [TOP - Project: Etch-A-Sketch](https://www.theodinproject.com/lessons/foundations-etch-a-sketch). Purpose - practice DOM manipulation.
+# 🖼️ Etch-A-Sketch | The Odin Project
 
-#### 2/14/2023
-Learned how to use JS to listen for mouse events and practiced adding elements to / removing elements from the DOM.
+Submission for [TOP's Etch-A-Sketch Project](https://www.theodinproject.com/lessons/foundations-etch-a-sketch).
 
-#### 2/15/2023
-Explored making a responsive square, tooltip, slider, and using ems in CSS.
+**[🔗 Live Preview](1ynelle.github.io/etch-a-sketch)**
+
+### Learned:
+
+- Adding and removing elements from the DOM
+- Use JS to listen for mouse events
+- CSS - styling a tooltip and slider, using ems
+
+Vanilla JS, HTML/CSS
