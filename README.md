@@ -4,7 +4,7 @@ Submission for [TOP's Etch-A-Sketch Project](https://www.theodinproject.com/less
 
 **[🔗 Live Preview](1ynelle.github.io/etch-a-sketch)**
 
-### Learned:
+#### Learned:
 
 - Adding and removing elements from the DOM
 - Use JS to listen for mouse events
