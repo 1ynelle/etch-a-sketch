@@ -2,7 +2,7 @@
 
 Submission for [TOP's Etch-A-Sketch Project](https://www.theodinproject.com/lessons/foundations-etch-a-sketch).
 
-**[🔗 Live Preview](1ynelle.github.io/etch-a-sketch)**
+**[🔗 Live Preview](https://1ynelle.github.io/etch-a-sketch/)**
 
 #### Learned:
 
