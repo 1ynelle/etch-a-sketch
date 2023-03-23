@@ -4,6 +4,8 @@ Submission for [TOP's Etch-A-Sketch Project](https://www.theodinproject.com/less
 
 **[🔗 Live Preview](https://1ynelle.github.io/etch-a-sketch/)**
 
+<img src="/img/etch-a-sketch_top.png" alt="Etch-A-Sketch Site Image Preview" width="600">
+
 #### Learned:
 
 - Adding and removing elements from the DOM
